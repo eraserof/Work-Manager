@@ -141,7 +141,6 @@ Required Installs:
 	- Docker
 	- NextJS
 	- Node v20.11.0
-
 To run/launch:
 	- Build the java appication in the backend directory. Note where the output located (export as war)
 	- Build the frontend bit located in the frontend directory. npm run build (there will be an out folder where the statically generated files live)
