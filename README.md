@@ -135,7 +135,6 @@ A simple Work Manager application to gain exposure to developing a simple java a
 			- Permissions: Read, Update
 			- Fields:
 				- Both fields that Customer and Worker see
-			- 
 			
 # Running
 Required Installs:
@@ -155,4 +154,3 @@ To run/launch:
 				- volumes are volumes in the container	
 					- the front end files are served up in ./frontend
 					- the api endpoints are accessed ./workmanager.....
-		- 
