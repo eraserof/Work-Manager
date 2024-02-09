@@ -1,0 +1,20 @@
+services:
+  web:
+    image: 'tomcat:latest'
+    container_name: Tomcat 
+    environment:
+      # password is needed
+      - 'POSTGRES_PASSWORD=postgres'
+      # having user specified broke something, or i dont understand how to connect with this environment value filled
+      # - 'POSTGRES_USER=postgres'
+      # inits the container with this db value
+      #- 'POSTGRES_DB=AutoMarketNavigator'
+    ports:
+      - '8082:8080'
+    volumes:
+      # where all the data is
+      #- AutoMarketNavigator_Postgres_DB:/var/lib/postgresql/data
+      # to create the tables that we need
+      #- ./db/CreateTables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - ./backend/workmanager/asdf:/usr/local/tomcat/webapps/
+      - ./frontend/workmanager/out:/usr/local/tomcat/webapps/frontend/
