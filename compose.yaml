@@ -17,4 +17,20 @@ services:
       # to create the tables that we need
       #- ./db/CreateTables.sql:/docker-entrypoint-initdb.d/create_tables.sql
       - ./backend/workmanager/asdf:/usr/local/tomcat/webapps/
-      - ./frontend/workmanager/out:/usr/local/tomcat/webapps/frontend/
+      - ./frontend/workmanager/build:/usr/local/tomcat/webapps/frontend/
+  wmDb:
+    image: 'postgres:latest'
+    container_name: WorkManagerPostgres
+    environment:
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_DB=WorkManager'
+    ports:
+      - '5432:5432'
+    volumes:
+      # where all the data is
+      - WorkManager_Postgres_DB:/var/lib/postgresql/data
+      # to create the tables that we need
+      - ./db/CreateTables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+volumes:
+  WorkManager_Postgres_DB:
