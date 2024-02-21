@@ -1,5 +1,5 @@
 # Work-Manager
-A simple Work Manager application to gain exposure to developing a simple java application based on MVC using: servlets, JSPs, and Beans
+A simple Work Manager application to gain exposure in developing a java application based on MVC using: servlets, JSPs, and Beans
 			
 # Goal:
 	Learn how to build a simple java application using the following:
